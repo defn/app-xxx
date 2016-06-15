@@ -1,0 +1,6 @@
+{
+  "require": [
+    "module-aws-env",
+    "module-aws-app"
+  ]
+}
