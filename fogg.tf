@@ -24,4 +24,5 @@ module "default" {
 
   app_name = "${var.app_name}"
   service_name = "${var.app_name}"
+  app_service_name = "${var.app_name}"
 }
