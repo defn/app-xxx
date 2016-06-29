@@ -7,6 +7,8 @@ module "app" {
   bucket_remote_state = "${var.bucket_remote_state}"
   context_org = "${var.context_org}"
   context_env = "${var.context_env}"
+
+  app_name = "${var.app_name}"
 }
 
 module "default" {
@@ -19,4 +21,6 @@ module "default" {
   cidr_blocks = "${var.cidr_blocks}"
 
   az_count = "${var.az_count}"
+
+  service_name = "${var.app_name}"
 }
