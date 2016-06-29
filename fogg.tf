@@ -22,5 +22,6 @@ module "default" {
 
   az_count = "${var.az_count}"
 
+  app_name = "${var.app_name}"
   service_name = "${var.app_name}"
 }
