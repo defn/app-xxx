@@ -31,5 +31,6 @@ resource "aws_route53_record" "app" {
   zone_id = "${module.default.zone_id}"
   name = "${var.app_name}"
   type = "ALIAS"
+  ttl = 60
   records = [ "${module.default.elb_dns_name}" ]
 }
