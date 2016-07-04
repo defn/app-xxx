@@ -30,7 +30,11 @@ module "default" {
 resource "aws_route53_record" "app" {
   zone_id = "${module.default.zone_id}"
   name = "${var.app_name}"
-  type = "ALIAS"
-  ttl = 60
-  records = [ "${module.default.elb_dns_name}" ]
+  type = "A"
+
+  alias {
+    name = "${module.default.elb_dns_name}"
+    zone_id = "${module.default.elb_zone_id}"
+    evaluate_target_health = false
+  }
 }
