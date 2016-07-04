@@ -26,3 +26,10 @@ module "default" {
   service_name = "default"
   app_service_name = "${var.app_name}-default"
 }
+
+resource "aws_route53_record" "app" {
+  zone_id = "${module.default.zone_id}"
+  name = "${var.app_name}"
+  type = "ALIAS"
+  records = [ "${module.default.elb_dns_name}" ]
+}
