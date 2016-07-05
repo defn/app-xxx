@@ -11,6 +11,9 @@ module "app" {
   app_name = "${var.app_name}"
 }
 
+variable asg_min { default = 0 }
+variable asg_max { default = 0 }
+
 module "default" {
   source = "../module-aws-service"
 
@@ -25,6 +28,9 @@ module "default" {
   app_name = "${var.app_name}"
   service_name = "default"
   app_service_name = "${var.app_name}-default"
+
+  asg_min = "${var.asg_min}"
+  asg_max = "${var.asg_max}"
 }
 
 resource "aws_route53_record" "app" {
