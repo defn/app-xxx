@@ -24,6 +24,8 @@ module "default" {
   cidr_blocks = "${var.cidr_blocks}"
 
   az_count = "${var.az_count}"
+  nat_count = "${var.nat_count}"
+  igw_count = "${var.igw_count}"
 
   app_name = "${var.app_name}"
   service_name = "default"
