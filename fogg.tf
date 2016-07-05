@@ -37,6 +37,14 @@ output "instances" {
   value = [ "${module.default.instances}" ]
 }
 
+output "app_sg_id" {
+  value = "${module.app.sg_id}"
+}
+
+output "default_sg_id" {
+  value = "${module.default.sg_id}"
+}
+
 resource "aws_route53_record" "app" {
   zone_id = "${module.default.zone_id}"
   name = "${var.app_name}"
