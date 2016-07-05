@@ -33,6 +33,10 @@ module "default" {
   asg_max = "${var.asg_max}"
 }
 
+output "instances" {
+  value = [ "${module.default.instances}" ]
+}
+
 resource "aws_route53_record" "app" {
   zone_id = "${module.default.zone_id}"
   name = "${var.app_name}"
